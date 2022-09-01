@@ -1,0 +1,16 @@
+{
+  "interviews": [
+    {
+      "id": "26f782b3-3031-40c2-a375-7901b9bf3881",
+      "name": "candidate 1",
+      "schedule": "Wednesday, 1 July 2022, 10.00 AM",
+      "skills": "Angular"
+    },
+    {
+      "id": "a42ff94a-3e12-45b2-9676-61049a4f97f3",
+      "name": "candidate 2",
+      "schedule": "Thursday, 12 Aug 2022, 2 PM",
+      "skills": "React, Node"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+<div>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Candidate Name</th>
+        <th scope="col">Interview Schedule</th>
+        <th scope="col">Skills</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let interview of interviews$">
+        <td>{{ interview.name }}</td>
+        <td>{{ interview.schedule }}</td>
+        <td>{{ interview.skills }}</td>
+        <td>
+          <button (click)="showUpdateForm(interview)" class="btn btn-primary" style="margin: 5px">Update</button>
+          <button (click)="deleteInterview(interview.id)" class="btn btn-danger" style="margin: 5px">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="isUpdateActivated" style="margin-top: 50px; margin-left: 50px;">
+    <h4>Update Interview Schedule</h4>
+    <form (ngSubmit)="updateInterview(updateForm)" #updateForm="ngForm">
+      <div class="form-group">
+        <label for="name">Candidate Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="form-control"
+          required
+          [(ngModel)]="interviewToBeUpdated.name"
+          style="width: 400px"/>
+      </div>
+      <div class="form-group">
+        <label for="schedule">Interview Schedule</label>
+        <input
+          type="text"
+          id="schedule"
+          name="schedule"
+          class="form-control"
+          required
+          [(ngModel)]="interviewToBeUpdated.schedule"
+          style="width: 400px"/>
+      </div>
+      <div class="form-group">
+        <label for="skills">Skills</label>
+        <input
+          type="text"
+          id="skills"
+          name="skills"
+          class="form-control"
+          required
+          [(ngModel)]="interviewToBeUpdated.skills"
+          style="width: 400px"/>
+      </div>
+      <button [disabled]="updateForm.invalid" class="btn btn-primary" type="submit">Update</button>
+    </form>
+  </div>
+</div>
